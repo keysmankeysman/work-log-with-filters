@@ -8,12 +8,13 @@ let btnName = document.querySelector('#btn-name'),
 
 
 // let selectedStatuses = ['inwork', 'stop', 'rework', 'verified', 'done']
+// let selectedStatuses = ['execute', 'allHistory', 'onlyWork']
 let selectedStatuses = []
 
 const statuses = {
-	inwork: 'Выполнение',
-	stop: 'Вся история',
-	rework: 'Только в работе'
+	execute: 'Выполнение',
+	allHistory: 'Вся история',
+	onlyWork: 'Только в работе'
 }
 
 checkboxes.forEach(checkbox => {

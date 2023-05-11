@@ -32,6 +32,10 @@ checkboxes.forEach(checkbox => {
 	})
 })
 
+function init() {
+	executeFilter()
+}
+
 function executeFilter() {
 	let statuses1 = ['В работе','Переделка']
 	let statuses2 = ['Проверено','Пройдено']
@@ -44,26 +48,26 @@ function executeFilter() {
 				if (statuses1.includes(currentStatus)) {
 					innerBody.forEach((body) => {
 						let twoStatus = body.querySelector('.table-body__status').innerHTML
-						console.log(twoStatus)
 						if (!statuses1.includes(twoStatus)) {
-							console.log('здесь')
 							body.classList.add('hidden')
 						}
 					})
 				} else if (statuses2.includes(currentStatus)) {
-					// console.log('последний статус категории 2')
+					innerBody.forEach((body) => {
+						let twoStatus = body.querySelector('.table-body__status').innerHTML
+						if (statuses1.includes(twoStatus)) {
+							body.classList.add('hidden')
+						}
+					})
 				} else {
-					// console.log('третий вариант')
+					
 				}
 			}
-
-		
-			// if (!statuses.includes(currentStatus)) {
-			// 	body.classList.add('hidden')
-			// }
 		})
 	})
 }
+
+// init()
 
 function allHistoryFilter() {
 	allWorkers.forEach(el => {

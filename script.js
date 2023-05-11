@@ -60,14 +60,14 @@ function executeFilter() {
 						}
 					})
 				} else {
-					
+
 				}
 			}
 		})
 	})
 }
 
-// init()
+init()
 
 function allHistoryFilter() {
 	allWorkers.forEach(el => {

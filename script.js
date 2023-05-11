@@ -11,11 +11,9 @@ let btnName = document.querySelector('#btn-name'),
 let selectedStatuses = []
 
 const statuses = {
-	inwork: 'В работе',
-	stop: 'Остановлено',
-	rework: 'Переделка',
-	verified: 'Проверено',
-	done: 'Пройден',
+	inwork: 'Выполнение',
+	stop: 'Вся история',
+	rework: 'Только в работе'
 }
 
 checkboxes.forEach(checkbox => {

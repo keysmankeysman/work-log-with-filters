@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Журнал</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="wrp-table">
+    <div class="menu">
+        <div class="btn-filter">Фильтр</div>
+    
+        <div class="hide-menu hidden">
+            <div class="hide-menu-checkbox">
+                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="checkbox" name="status" value="inwork"> В работе</label>
+                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="checkbox" name="status" value="stop"> Остановлено</label>
+                 <label class="hide-menu__label"><input class="hide-menu__checkbox" type="checkbox" name="status" value="rework"> Переделка</label>
+                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="checkbox" name="status" value="verified"> Проверено</label>
+                <label  class="hide-menu__label"><input class="hide-menu__checkbox" type="checkbox" name="status" value="done"> Пройден</label>
+            </div>
+            
+            <div class="hide-menu-filter-name">
+                <input class="hide-menu__input" type="text" id="searchByName">
+                <button class="btn btn-filter-name" id="btn-name">Фильтр по имени</button>
+            </div>
+
+        </div>
+    </div>
+
+  <div class="table">
+      <div class="table-title">
+          <div class="col-1 table-title__text table-title__transition">Переход</div>
+          <div class="col-2 table-title__text table-title__status">Статус</div>
+          <div class="col-3 table-title__text table-title__start">Начало</div>
+          <div class="col-4 table-title__text table-title__end">Окончание</div>
+          <div class="col-5 table-title__text table-title__total">Длительность</div>
+      </div>
+      <div class="table-worker">
+        <div class="table-caption">
+            Проверяющий 1
+        </div>  
+        <a href="%%table_link%%" class="table-body bg-red">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 4. Опер. 5. Проверка ротора. Переход 6 </div>
+                <div class="table-body__text table-body__main color-red">Отсутствие энергоресурсов</div>
+                <div class="table-body__text table-body__desc">Произошла проблема с 294</div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">В работе</div>
+            <div class="col-3 table-body__text table-body__start">02.01.2001 15:12</div>
+            <div class="col-4 table-body__text table-body__end">12</div>
+            <div class="col-5 table-body__text table-body__total">22</div>
+        </a>     
+        <a href="%%table_link%%" class="table-body bg-green">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 2. Опер. 5. Проверка ротора. Осмотр деталей. Переход 1 </div>
+                <div class="table-body__text table-body__main color-green">Петров Петр Петрович</div>
+                <div class="table-body__text table-body__desc">При осмотре поправил деталь 1</div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">Проверено</div>
+            <div class="col-3 table-body__text table-body__start">02.01.2001 12:10</div>
+            <div class="col-4 table-body__text table-body__end"></div>
+            <div class="col-5 table-body__text table-body__total"></div>
+          </a>  
+
+      </div>
+
+      <div class="table-worker">
+        <div class="table-caption">
+            Работник 1
+        </div>  
+        <a href="%%table_link%%" class="table-body bg-violet">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 2. Опер. 5. Проверка сборочных едениц на комплектность корпусов и колец ОК. Переход 3</div>
+                <div class="table-body-icons">
+                    <img class="table-body-icons__icon table-body-icons__icon-message" src="images/icon-1-message.png" alt="сообщение">
+                    <img class="table-body-icons__icon table-body-icons__icon-audio" src="images/icon-2-audio.png" alt="аудио">
+                    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+                    <img class="table-body-icons__icon table-body-icons__icon-video" src="images/icon-4-video.png" alt="видео">
+                </div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">Проверено</div>
+            <div class="col-3 table-body__text table-body__start">02.01.2001 12:10</div>
+            <div class="col-4 table-body__text table-body__end"></div>
+            <div class="col-5 table-body__text table-body__total"></div>
+        </a>     
+        <a href="%%table_link%%" class="table-body bg-orange">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 2. Опер. 5. Проверка сборочных едениц на комплектность корпусов и колец ОК. Переход 3</div>
+                <div class="table-body-icons">
+                    <img class="table-body-icons__icon table-body-icons__icon-message" src="images/icon-1-message.png" alt="сообщение">
+                    <img class="table-body-icons__icon table-body-icons__icon-audio" src="images/icon-2-audio.png" alt="аудио">
+                    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+                    <img class="table-body-icons__icon table-body-icons__icon-video" src="images/icon-4-video.png" alt="видео">
+                </div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">Переделка</div>
+            <div class="col-3 table-body__text table-body__start"></div>
+            <div class="col-4 table-body__text table-body__end">12</div>
+            <div class="col-5 table-body__text table-body__total">22</div>
+        </a>    
+         <!-- возобновление  -->
+        <a href="%%table_link%%" class="table-body bg-green-renewal">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__renewal">Возобновление работ</div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">Переделка</div>
+            <div class="col-3 table-body__text table-body__start"></div>
+            <div class="col-4 table-body__text table-body__end">12</div>
+            <div class="col-5 table-body__text table-body__total">22</div>
+        </a>  
+         <!-- аварийная  -->
+        <a href="%%table_link%%" class="table-body bg-red-accident">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step color-white">Этап 2. Опер. 5. Проверка сборочных едениц на комплектность корпусов и колец ОК. Переход 3</div>
+                <div class="table-body-icons">
+                    <img class="table-body-icons__icon table-body-icons__icon-message" src="images/icon-1-message.png" alt="сообщение">
+                    <img class="table-body-icons__icon table-body-icons__icon-audio" src="images/icon-2-audio.png" alt="аудио">
+                    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+                    <img class="table-body-icons__icon table-body-icons__icon-video" src="images/icon-4-video.png" alt="видео">
+                </div>
+            </div>
+            <div class="col-2 table-body__text table-body__status color-white">Остановлено</div>
+            <div class="col-3 table-body__text table-body__start"></div>
+            <div class="col-4 table-body__text table-body__end color-white">12</div>
+            <div class="col-5 table-body__text table-body__total color-white">22</div>
+        </a>  
+      </div>
+      <div class="table-worker">
+        <div class="table-caption">
+            Проверяющий 1
+        </div>  
+        <a href="%%table_link%%" class="table-body bg-red">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 4. Опер. 5. Проверка ротора. Переход 6 </div>
+                <div class="table-body__text table-body__main color-red">Отсутствие энергоресурсов</div>
+                <div class="table-body__text table-body__desc">Произошла проблема с 294</div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">В работе</div>
+            <div class="col-3 table-body__text table-body__start">02.01.2001 15:12</div>
+            <div class="col-4 table-body__text table-body__end">12</div>
+            <div class="col-5 table-body__text table-body__total">22</div>
+        </a>     
+        <a href="%%table_link%%" class="table-body bg-green">
+            <div class="col-1 table-body__transition">
+                <div class="table-body__text table-body__step">Этап 2. Опер. 5. Проверка ротора. Осмотр деталей. Переход 1 </div>
+                <div class="table-body__text table-body__main color-green">Петров Петр Петрович</div>
+                <div class="table-body__text table-body__desc">При осмотре поправил деталь 1</div>
+            </div>
+            <div class="col-2 table-body__text table-body__status">Проверено</div>
+            <div class="col-3 table-body__text table-body__start">02.01.2001 12:10</div>
+            <div class="col-4 table-body__text table-body__end"></div>
+            <div class="col-5 table-body__text table-body__total"></div>
+          </a>  
+
+      </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

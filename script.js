@@ -33,23 +33,27 @@ checkboxes.forEach(checkbox => {
 })
 
 function executeFilter() {
-	console.log('execute function')
 	let statuses1 = ['В работе','Переделка']
 	let statuses2 = ['Проверено','Пройдено']
 	allWorkers.forEach(el => {
 		let innerBody = el.querySelectorAll('.table-body')
-		console.log('воркер', el)
-		console.log('row length', innerBody.length)
 		innerBody.forEach((body, index) => {
 			let lastIndexRow = index + 1 === innerBody.length
 			if (lastIndexRow) {
 				let currentStatus = body.querySelector('.table-body__status').innerHTML
 				if (statuses1.includes(currentStatus)) {
-					console.log('последний статус категории 1')
+					innerBody.forEach((body) => {
+						let twoStatus = body.querySelector('.table-body__status').innerHTML
+						console.log(twoStatus)
+						if (!statuses1.includes(twoStatus)) {
+							console.log('здесь')
+							body.classList.add('hidden')
+						}
+					})
 				} else if (statuses2.includes(currentStatus)) {
-					console.log('последний статус категории 2')
+					// console.log('последний статус категории 2')
 				} else {
-					console.log('третий вариант')
+					// console.log('третий вариант')
 				}
 			}
 

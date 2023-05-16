@@ -2,6 +2,7 @@ let btnFilter = document.querySelector('.btn-filter'),
 	hideMenu = document.querySelector('.hide-menu'),
 	allWorkers = document.querySelectorAll('.table-worker'),
 	inputSearch = document.querySelector('#searchByName'),
+	allRow = document.querySelectorAll('.table-body')
 	// checkboxes = document.querySelectorAll('input[name="status"]:checked');
 	checkboxes = document.querySelectorAll('input[name="status"]');
 
@@ -33,7 +34,8 @@ checkboxes.forEach(checkbox => {
 })
 
 function init() {
-	executeFilter()
+	// executeFilter()
+	onlyWorkFilter()
 }
 
 function executeFilter() {
@@ -67,7 +69,10 @@ function executeFilter() {
 	})
 }
 
-init()
+
+
+let allTasks = getAllTasks()
+console.log('allTasks', allTasks)
 
 function allHistoryFilter() {
 	allWorkers.forEach(el => {
@@ -78,24 +83,62 @@ function allHistoryFilter() {
 	})
 }
 
-// только в работе, показывать статусы "В работе" и "Переделка"
-function onlyWorkFilter() {
-	let statuses = ['В работе','Переделка']
-	allWorkers.forEach(el => {
-		let innerBody = el.querySelectorAll('.table-body')
-		innerBody.forEach((body) => {
-			let currentStatus = body.querySelector('.table-body__status').innerHTML
-			if (!statuses.includes(currentStatus)) {
-				body.classList.add('hidden')
+
+
+function getAllTasks() {
+	let tasks = []
+
+	let allRow = document.querySelectorAll('.table-body')
+	allRow.forEach(row => {
+		if (row.querySelector('.table-body__step').innerHTML !== '') {
+			let currentTask = row.querySelector('.table-body__step').innerHTML
+			if (!tasks.includes(currentTask)) {
+				tasks.push(currentTask)
 			}
-			// if (body.querySelector('.table-body__status').innerHTML.includes(statuses)) {
-			// 	console.log('hidden')
-			// 	body.classList.add('hidden')
-			// }
+		}
+	})
+	let result = tasks.map(el => el.split('.')[3])
+	let uniqueArray = result.filter(function(item, pos) {
+		return result.indexOf(item) == pos
+	})
+	return uniqueArray
+}
+
+
+// только в работе, показывать статусы "В работе" и "Переделка" - старый вариант
+function onlyWorkFilter() {
+
+	console.log('onlyWorkFilter')
+	console.log('allTasks', allTasks)
+
+	allTasks.forEach(task => {
+		// console.log(task)
+		allRow.forEach(row => {
+			let currentStep = row.querySelector('.table-body__step').innerHTML 
+			if (currentStep.includes(task)) {
+				console.log('!!!Task:', task)
+			}
 		})
 	})
 
+
 }
+
+
+
+// только в работе, показывать статусы "В работе" и "Переделка" - старый вариант
+// function onlyWorkFilter() {
+// 	let statuses = ['В работе','Переделка']
+// 	allWorkers.forEach(el => {
+// 		let innerBody = el.querySelectorAll('.table-body')
+// 		innerBody.forEach((body) => {
+// 			let currentStatus = body.querySelector('.table-body__status').innerHTML
+// 			if (!statuses.includes(currentStatus)) {
+// 				body.classList.add('hidden')
+// 			}
+// 		})
+// 	})
+// }
 
 
 
@@ -164,3 +207,4 @@ function showAllTableBody () {
 	
 
 
+init()

@@ -14,14 +14,409 @@
     
         <div class="hide-menu hidden">
             <div class="hide-menu-checkbox">
-                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="radio" name="status" value="execute" checked> Выполнение</label>
+                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="radio" name="status" value="execute"> Выполнение</label>
                 <label class="hide-menu__label"><input class="hide-menu__checkbox" type="radio" name="status" value="allHistory"> Вся история</label>
-                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="radio" name="status" value="onlyWork"> Только в работе</label>
+                <label class="hide-menu__label"><input class="hide-menu__checkbox" type="radio" name="status" value="onlyWork" checked> Только в работе</label>
             </div>
 
         </div>
     </div>
 
+    <div class="table">
+
+        <div class="table-title">
+            <div class="col-1 table-title__text table-title__transition">Переход</div>
+            <div class="col-2 table-title__text table-title__status">Статус</div>
+            <div class="col-3 table-title__text table-title__start">Начало</div>
+            <div class="col-4 table-title__text table-title__end">Окончание</div>
+            <div class="col-5 table-title__text table-title__total">Длительность</div>
+        </div>
+  
+        
+  <div class="table-caption">
+      Работник 1
+  </div>  <a href="uniwebview://openstep: 0:1:0:3:22" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 20. Проверка торцевых и радиальных биений опор для обеспечения соосности опор и подбор регулировочных шайб. Переход 25</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >28:04:2023 13:59</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">01:44</div>
+      
+  </a>  
+  <div class="table-caption">
+      Проверяющий 1
+  </div>  <a href="uniwebview://openstep: 0:1:0:0:8" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 9</div>
+          
+          <div class="table-body__text table-body__main color-red"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:36</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:07</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-red">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 8</div>
+          
+          <div class="table-body__text table-body__main color-red">Ожидание ДСЕ взамен забракованной </div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Остановлено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:36</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:07</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-green-renewal">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__renewal  "> Возобновление работ</div>
+          
+          <div class="table-body__text table-body__main color-white"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  "></div>
+      <div class="col-3 table-body__text table-body__start " >1:01:1 00:00</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total "></div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-red-accident">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  color-white"> Этап 1. Операция 5. Подготовка к сборке. Переход 8</div>
+          
+          <div class="table-body__text table-body__main color-white">Ожидание ДСЕ взамен забракованной </div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  color-white">Остановка</div>
+      <div class="col-3 table-body__text table-body__start color-white" >24:04:2023 11:35</div>
+      <div class="col-4 table-body__text table-body__end color-white">24:04:2023 11:36</div>
+      <div class="col-5 table-body__text table-body__total color-white">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 8</div>
+          
+          <div class="table-body__text table-body__main color-red"></div>
+          <div class="table-body__text table-body__desc">шаг возвращен в работу</div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Переделка</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:35</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:35</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-red">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 8</div>
+          
+          <div class="table-body__text table-body__main color-red">Ожидание ДСЕ взамен забракованной </div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Остановлено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:35</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:35</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:5" class="table-body bg-green">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 6</div>
+          <div class="table-body-icons">
+    
+    
+    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+  
+    
+  </div>
+  
+  
+          <div class="table-body__text table-body__main color-green">Проверяющий 1</div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Проверено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:35</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:08</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:4" class="table-body bg-red">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 5</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc">шаг возвращен в работу</div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Переделка</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:35</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:09</div>
+      
+  </a>  
+  <div class="table-caption">
+      Работник 1
+  </div>  <a href="uniwebview://openstep: 0:1:0:0:3" class="table-body bg-green">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 4</div>
+          
+          <div class="table-body__text table-body__main color-green">Проверяющий 1</div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Проверено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:34</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:09</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:2" class="table-body bg-green">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 3</div>
+          
+          <div class="table-body__text table-body__main color-green">Проверяющий 1</div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Проверено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:34</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:09</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:1" class="table-body bg-green">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 2</div>
+          
+          <div class="table-body__text table-body__main color-green">Проверяющий 1</div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Проверено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:34</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:09</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:0" class="table-body bg-green">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 1</div>
+          
+          <div class="table-body__text table-body__main color-green">Проверяющий 1</div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Проверено</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:34</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:09</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:8" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 9</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:32</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:36</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:7" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 8</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:32</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:35</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:6" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 7</div>
+          <div class="table-body-icons">
+    <img class="table-body-icons__icon table-body-icons__icon-message" src="images/icon-1-message.png" alt="сообщение">
+  
+  
+    <img class="table-body-icons__icon table-body-icons__icon-audio" src="images/icon-2-audio.png" alt="аудио">
+  
+  
+    
+    
+  </div>
+  
+  
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:32</div>
+      <div class="col-4 table-body__text table-body__end "></div>
+      <div class="col-5 table-body__text table-body__total ">04:12</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:5" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 6</div>
+          <div class="table-body-icons">
+    
+    
+    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+  
+    
+  </div>
+  
+  
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status">Пройден</div>
+      <div class="col-3 table-body__text table-body__start" >24:04:2023 11:32</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:35</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:5" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 6</div>
+          <div class="table-body-icons">
+    
+    
+    <img class="table-body-icons__icon table-body-icons__icon-photo" src="images/icon-3-photo.png" alt="фото">
+  
+    
+  </div>
+  
+  
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:32</div>
+      <div class="col-5 table-body__text table-body__total ">00:01</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:4" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 5</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:35</div>
+      <div class="col-5 table-body__text table-body__total ">00:04</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:4" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 5</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:30</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:3" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 4</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:34</div>
+      <div class="col-5 table-body__text table-body__total ">00:04</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:3" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 4</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:30</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:2" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 3</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:34</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:2" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 3</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:30</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:1" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 2</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:34</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:1" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 2</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:30</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:0" class="table-body bg-violet">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 1</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">Пройден</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:34</div>
+      <div class="col-5 table-body__text table-body__total ">00:03</div>
+      
+  </a>  <a href="uniwebview://openstep: 0:1:0:0:0" class="table-body bg-orange">
+      <div class="col-1 table-body__transition">
+          <div class="table-body__text table-body__step  "> Этап 1. Операция 5. Подготовка к сборке. Переход 1</div>
+          
+          <div class="table-body__text table-body__main %%table_color%%"></div>
+          <div class="table-body__text table-body__desc"></div>
+      </div>
+      <div class="col-2 table-body__text table-body__status  ">В работе</div>
+      <div class="col-3 table-body__text table-body__start " >24:04:2023 11:30</div>
+      <div class="col-4 table-body__text table-body__end ">24:04:2023 11:30</div>
+      <div class="col-5 table-body__text table-body__total ">00:00</div>
+      
+  </a>  
+            
+    </div>
+
+<!-- 
   <div class="table">
       <div class="table-title">
           <div class="col-1 table-title__text table-title__transition">Переход</div>
@@ -132,8 +527,8 @@
             <div class="col-4 table-body__text table-body__end">12</div>
             <div class="col-5 table-body__text table-body__total">22</div>
         </a>    
-         <!-- возобновление  -->
         <a href="%%table_link%%" class="table-body bg-green-renewal">
+            <div class="table-body__text table-body__step"></div>
             <div class="col-1 table-body__transition">
                 <div class="table-body__text table-body__renewal">Возобновление работ</div>
             </div>
@@ -142,7 +537,6 @@
             <div class="col-4 table-body__text table-body__end">12</div>
             <div class="col-5 table-body__text table-body__total">22</div>
         </a>  
-         <!-- аварийная  -->
         <a href="%%table_link%%" class="table-body bg-red-accident">
             <div class="col-1 table-body__transition">
                 <div class="table-body__text table-body__step color-white">Этап 2. Опер. 5. Проверка сборочных едениц на комплектность корпусов и колец ОК. Переход 3</div>
@@ -188,7 +582,7 @@
 
       </div>
 
-  </div>
+  </div> -->
 </div>
 
 <script src="script.js"></script>

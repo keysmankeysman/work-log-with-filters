@@ -115,17 +115,60 @@ function getAllTasks() {
 // только в работе, показывать статусы "В работе" и "Переделка" - старый вариант
 function onlyWorkFilter() {
 
+	// allTasks.forEach(task => {
+	// 	let currentStatusTask
+
+	// 	allRow.forEach(row => {
+	// 		let currentStatus = row.querySelector('.table-body__status').innerHTML 
+	// 		let currentEnd = row.querySelector('.table-body__end').innerHTML 
+
+	// 		if (currentStatus === 'В работе' && currentEnd === '') {
+
+	// 		} else {
+	// 			currentStatusTask = 'В работе'
+	// 		}
+	// 	})
+
+	// 	if (currentStatusTask === 'В работе') {
+	// 		allRow.forEach(row => {
+	// 			let currentStatus = row.querySelector('.table-body__status').innerHTML 
+	// 			let currentEnd = row.querySelector('.table-body__end').innerHTML 
+	
+	// 			if (currentStatus === 'В работе' && currentEnd === '') {
+	
+	// 			} else {
+	// 				currentStatusTask = 'В работе'
+	// 			}
+	// 		})
+	// 	}
+	// })
+
+function clearAllRows () {
+	allRow.forEach(row => {
+		row.classList.add('hidden')
+	})
+}
+
+
 	allTasks.forEach(task => {
 		allRow.forEach(row => {
 			if (row.querySelector('.table-body__step') !== null) {
 				let currentStatus = row.querySelector('.table-body__status').innerHTML 
 				let currentEnd = row.querySelector('.table-body__end').innerHTML 
+
 				// проверка в работе и не окончено
-				if (currentEnd === '' && currentStatus === 'В работе') {
-				} else {
-					row.classList.add('hidden')
+				if (currentStatus === 'В работе' && currentEnd === '') {
+					clearAllRows()
+					row.classList.remove('hidden')
 				}
-				
+
+				// проверка переделка и не окончено
+				if (currentStatus === 'Переделка' && currentEnd === '') {
+					clearAllRows()
+					row.classList.remove('hidden')
+				}
+
+				// проверка на статусы Остановка и Возобновлено (всегда показывать)
 				if (row.classList.contains('table-body__renewal') || currentStatus === 'Остановка') {
 					row.classList.remove('hidden')
 				} 

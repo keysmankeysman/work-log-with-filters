@@ -120,11 +120,16 @@ function onlyWorkFilter() {
 			if (row.querySelector('.table-body__step') !== null) {
 				let currentStatus = row.querySelector('.table-body__status').innerHTML 
 				let currentEnd = row.querySelector('.table-body__end').innerHTML 
+				// проверка в работе и не окончено
 				if (currentEnd === '' && currentStatus === 'В работе') {
-
 				} else {
 					row.classList.add('hidden')
 				}
+				
+				if (row.classList.contains('table-body__renewal') || currentStatus === 'Остановка') {
+					row.classList.remove('hidden')
+				} 
+
 			}
 		})
 	})

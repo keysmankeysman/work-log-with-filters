@@ -35,7 +35,7 @@ checkboxes.forEach(checkbox => {
 
 function init() {
 	// executeFilter()
-	onlyWorkFilter()
+	// onlyWorkFilter()
 }
 
 function executeFilter() {
@@ -90,14 +90,14 @@ function getAllTasks() {
 
 	let allRow = document.querySelectorAll('.table-body')
 	allRow.forEach(row => {
-		if (row.querySelector('.table-body__step').innerHTML !== '') {
+		if (row.querySelector('.table-body__step') !== null) {
 			let currentTask = row.querySelector('.table-body__step').innerHTML
 			if (!tasks.includes(currentTask)) {
 				tasks.push(currentTask)
 			}
 		}
 	})
-	let result = tasks.map(el => el.split('.')[3])
+	let result = tasks.map(el => el.split('.')[2])
 	let uniqueArray = result.filter(function(item, pos) {
 		return result.indexOf(item) == pos
 	})

@@ -143,19 +143,13 @@ for (let i = 0; i < allTasks.length; i++) {
 }
 
 function getStatuses() {
-	console.log('getStatuses start')
-	console.log(arr)
-
-	let currentStatus
-
 	arr.forEach((el,index) => {
-		el.rows.forEach(row => {
+		el.rows.forEach((row, indx) => {
 			let currentStatus = row.querySelector('.table-body__status').innerHTML 
 			let currentEnd = row.querySelector('.table-body__end').innerHTML 
 			if (currentStatus === 'В работе' && currentEnd === '') {
-				console.log('условие прошло')
-				console.log(arr[index])
 				arr[index].statusInwork = true
+				arr[index].statusInworkIndex = indx
 			}
 		})
 	})
@@ -165,8 +159,20 @@ console.log('ARR:', arr)
 
 getStatuses()
 
+arr[0].rows[1].classList.add('hidden')
+
+
+
 function checkStatus() {
-	
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].statusInwork) {
+			arr[i].rows.forEach(el => el.classList.add('hidden'))
+			// arr[i].rows[arr[i].rows[]]
+			// console.log(arr[i].statusInworkIndex)
+			arr[i].rows[arr[i].statusInworkIndex].classList.remove('hidden')
+		} 
+
+	}
 }
 
 checkStatus()

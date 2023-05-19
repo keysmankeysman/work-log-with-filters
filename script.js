@@ -117,18 +117,61 @@ let oneTask = 'Проверка торцевых и радиальных бие�
 
 function getRowsListByTask(oneTask) {
 	let arr = [...allRow]
-	console.log(arr)
-	console.log(arr[1].querySelector('.table-body__step').innerHTML)
-	console.log(oneTask)
-	console.log(arr[1].querySelector('.table-body__step').innerHTML.includes(oneTask))
 	let result = arr.filter(el => {
 		if (el.querySelector('.table-body__step') !== null) { 
 			return el.querySelector('.table-body__step').innerHTML.includes(oneTask)
 	 	} 
 	})
-	// let result = arr[0].querySelector('.table-body__step').innerHTML 
-	console.log('result', result)
+	return result
 }
+
+console.log(allTasks)
+console.log('перед циклом')
+
+// arr - массив объектов с нодами row
+let arr = []
+for (let i = 0; i < allTasks.length; i++) {
+	let result = getRowsListByTask(allTasks[i])
+
+	let obj = {
+		id: i+1,
+		name: allTasks[i],
+		rows: result
+	}
+
+	arr.push(obj)
+}
+
+function getStatuses() {
+	console.log('getStatuses start')
+	console.log(arr)
+
+	let currentStatus
+
+	arr.forEach((el,index) => {
+		el.rows.forEach(row => {
+			let currentStatus = row.querySelector('.table-body__status').innerHTML 
+			let currentEnd = row.querySelector('.table-body__end').innerHTML 
+			if (currentStatus === 'В работе' && currentEnd === '') {
+				console.log('условие прошло')
+				console.log(arr[index])
+				arr[index].statusInwork = true
+			}
+		})
+	})
+}
+
+console.log('ARR:', arr)
+
+getStatuses()
+
+function checkStatus() {
+	
+}
+
+checkStatus()
+
+
 
 getRowsListByTask(oneTask)
 

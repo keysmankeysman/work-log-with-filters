@@ -9,7 +9,7 @@ let btnFilter = document.querySelector('.btn-filter'),
 
 // let selectedStatuses = ['inwork', 'stop', 'rework', 'verified', 'done']
 let selectedStatuses = []
-// let selectedStatuses = []
+let positionName = 2
 
 const statuses = {
 	execute: 'Выполнение',
@@ -92,7 +92,7 @@ function allHistoryFilter() {
 }
 
 
-
+// 1.Список всех тасков
 function getAllTasks() {
 	let tasks = []
 
@@ -104,78 +104,85 @@ function getAllTasks() {
 			}
 		}
 	})
-	let result = tasks.map(el => el.split('.')[2])
+	let result = tasks.map(el => el.split('.')[positionName])
 	let uniqueArray = result.filter(function(item, pos) {
 		return result.indexOf(item) == pos
 	})
 	return uniqueArray
 }
 
+// 2.Получение списка нод по каждой таске
+
+let oneTask = 'Проверка торцевых и радиальных биений опор для обеспечения соосности опор и подбор регулировочных шайб'
+
+function getRowsListByTask(oneTask) {
+	let arr = [...allRow]
+	console.log(arr)
+	console.log(arr[1].querySelector('.table-body__step').innerHTML)
+	console.log(oneTask)
+	console.log(arr[1].querySelector('.table-body__step').innerHTML.includes(oneTask))
+	let result = arr.filter(el => {
+		if (el.querySelector('.table-body__step') !== null) { 
+			return el.querySelector('.table-body__step').innerHTML.includes(oneTask)
+	 	} 
+	})
+	// let result = arr[0].querySelector('.table-body__step').innerHTML 
+	console.log('result', result)
+}
+
+getRowsListByTask(oneTask)
 
 // только в работе, показывать статусы "В работе" и "Переделка" - старый вариант
 function onlyWorkFilter() {
 
-	// allTasks.forEach(task => {
-	// 	let currentStatusTask
+	// allTasks.forEach((task, index) => {
+	// 	console.log('проход #', index + 1)
+	// 	console.log('task', task)
+	// 	let statusInwork = null
 
 	// 	allRow.forEach(row => {
-	// 		let currentStatus = row.querySelector('.table-body__status').innerHTML 
-	// 		let currentEnd = row.querySelector('.table-body__end').innerHTML 
-
-	// 		if (currentStatus === 'В работе' && currentEnd === '') {
-
-	// 		} else {
-	// 			currentStatusTask = 'В работе'
-	// 		}
-	// 	})
-
-	// 	if (currentStatusTask === 'В работе') {
-	// 		allRow.forEach(row => {
+	// 		if (row.querySelector('.table-body__step') !== null) {
 	// 			let currentStatus = row.querySelector('.table-body__status').innerHTML 
 	// 			let currentEnd = row.querySelector('.table-body__end').innerHTML 
-	
+	// 			console.log('row:', row)
+	// 			console.log(currentStatus === 'В работе')
+	// 			console.log(currentEnd === '')
+	// 			console.log(currentStatus === 'В работе' && currentEnd === '')
 	// 			if (currentStatus === 'В работе' && currentEnd === '') {
-	
-	// 			} else {
-	// 				currentStatusTask = 'В работе'
+	// 				statusInwork++
 	// 			}
-	// 		})
-	// 	}
+	// 		}
+	// 	})
+	// 	console.log(statusInwork)
+
 	// })
 
-function clearAllRows () {
-	allRow.forEach(row => {
-		row.classList.add('hidden')
-	})
-}
 
 
-	allTasks.forEach(task => {
-		allRow.forEach(row => {
-			if (row.querySelector('.table-body__step') !== null) {
-				let currentStatus = row.querySelector('.table-body__status').innerHTML 
-				let currentEnd = row.querySelector('.table-body__end').innerHTML 
 
-				// проверка в работе и не окончено
-				if (currentStatus === 'В работе' && currentEnd === '') {
-					clearAllRows()
-					row.classList.remove('hidden')
-				}
+	// allTasks.forEach(task => {
+	// 	allRow.forEach(row => {
+	// 		if (row.querySelector('.table-body__step') !== null) {
+	// 			let currentStatus = row.querySelector('.table-body__status').innerHTML 
+	// 			let currentEnd = row.querySelector('.table-body__end').innerHTML 
 
-				// проверка переделка и не окончено
-				if (currentStatus === 'Переделка' && currentEnd === '') {
-					clearAllRows()
-					row.classList.remove('hidden')
-				}
+	// 			// проверка в работе и не окончено
+	// 			if (currentStatus === 'В работе' && currentEnd === '') {
+	// 				row.classList.remove('hidden')
+	// 			}
 
-				// проверка на статусы Остановка и Возобновлено (всегда показывать)
-				if (row.classList.contains('table-body__renewal') || currentStatus === 'Остановка') {
-					row.classList.remove('hidden')
-				} 
+	// 			// проверка переделка и не окончено
+	// 			if (currentStatus === 'Переделка' && currentEnd === '') {
+	// 				row.classList.remove('hidden')
+	// 			}
 
-			}
-		})
-	})
+	// 			// проверка на статусы Остановка и Возобновлено (всегда показывать)
+	// 			if (row.classList.contains('table-body__renewal') || currentStatus === 'Остановка') {
+	// 				row.classList.remove('hidden')
+	// 			} 
+	// 		}
+	// 	})
+	// })
 }
 
 

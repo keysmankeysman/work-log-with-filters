@@ -87,10 +87,15 @@ function onlyWorkFilter() {
 					arr[index].statusInwork = true
 					arr[index].statusInworkIndex = indx
 				}
+				if (currentStatus === 'Остановлено' && currentEnd === '') {
+					arr[index].statusStop = true
+					arr[index].statusStopIndex = indx
+				}
 			})
 		})
 	}
 	checkStatusWorkers()
+	hideEmptyWorkers()
 }
 
 
@@ -154,6 +159,13 @@ function init() {
 
 function checkStatusWorkers() {
 	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].statusStop) {
+			arr[i].rows.forEach(el => el.classList.add('hidden'))
+			arr[i].rows[arr[i].statusStopIndex].classList.remove('hidden')
+			console.log('перед ретерном')
+			return
+		} 
+		console.log('после ретерна есть код?')
 		if (arr[i].statusInwork) {
 			arr[i].rows.forEach(el => el.classList.add('hidden'))
 			arr[i].rows[arr[i].statusInworkIndex].classList.remove('hidden')

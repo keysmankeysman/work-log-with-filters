@@ -147,7 +147,7 @@ function getStatuses() {
 		el.rows.forEach((row, indx) => {
 			let currentStatus = row.querySelector('.table-body__status').innerHTML 
 			let currentEnd = row.querySelector('.table-body__end').innerHTML 
-			if (currentStatus === 'В работе' && currentEnd === '') {
+			if (currentStatus === 'В работе' && currentEnd === '' || currentStatus === 'Переделка'  && currentEnd === '') {
 				arr[index].statusInwork = true
 				arr[index].statusInworkIndex = indx
 			}
@@ -158,10 +158,6 @@ function getStatuses() {
 console.log('ARR:', arr)
 
 getStatuses()
-
-arr[0].rows[1].classList.add('hidden')
-
-
 
 function checkStatus() {
 	for (let i = 0; i < arr.length; i++) {

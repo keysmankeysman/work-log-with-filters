@@ -95,6 +95,7 @@ function onlyWorkFilter() {
 		})
 	}
 	checkStatusWorkers()
+	showExceptionsStatus()
 	hideEmptyWorkers()
 }
 
@@ -157,15 +158,15 @@ function init() {
 	onlyWorkFilter()
 }
 
+
+// в зависимости от статуса отображать
 function checkStatusWorkers() {
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i].statusStop) {
 			arr[i].rows.forEach(el => el.classList.add('hidden'))
 			arr[i].rows[arr[i].statusStopIndex].classList.remove('hidden')
-			console.log('перед ретерном')
 			return
 		} 
-		console.log('после ретерна есть код?')
 		if (arr[i].statusInwork) {
 			arr[i].rows.forEach(el => el.classList.add('hidden'))
 			arr[i].rows[arr[i].statusInworkIndex].classList.remove('hidden')
@@ -175,6 +176,14 @@ function checkStatusWorkers() {
 
 // ОСТАЛЬНЫЕ ФУНКЦИИ 
 
+// показать статусы исключения ОСТАНОВЛЕНО или ВОЗОБНОВЛЕНО
+function showExceptionsStatus() {
+	allRow.forEach(el => {
+		if (el.classList.contains('bg-green-renewal') || el.classList.contains('bg-red-accident')) {
+			el.classList.remove('hidden')
+		}
+	})
+} 
 
 // скрыть всех воркеров, которые не имеют итемов
 function hideEmptyWorkers() {

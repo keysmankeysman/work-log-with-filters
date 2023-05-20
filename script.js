@@ -174,6 +174,27 @@ function checkStatus() {
 checkStatus()
 
 
+// скрыть всех воркеров, которые не имеют итемов
+function hideEmptyWorkers() {
+	console.log('hideEmptyWorkers')
+	let workers = [...allWorkers]
+	
+	workers.forEach(el => {
+		let innerBody = el.querySelectorAll('.table-body')
+		let count = 0
+		console.log(innerBody)
+		innerBody.forEach(row => {
+			if (row.classList.contains('hidden')) {
+				count++
+			}
+		})
+		if (count === innerBody.length) {
+			el.classList.add('hidden')
+		}
+	})
+}
+hideEmptyWorkers()
+
 
 getRowsListByTask(oneTask)
 

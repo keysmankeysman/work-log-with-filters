@@ -9,7 +9,6 @@ let btnFilter = document.querySelector('.btn-filter'),
 
 // let selectedStatuses = ['inwork', 'stop', 'rework', 'verified', 'done']
 let selectedStatuses = []
-let positionName = 2
 
 const statuses = {
 	execute: 'Выполнение',
@@ -73,6 +72,8 @@ function allHistoryFilter() {
 	allRow.forEach(row => {
 		row.classList.remove('hidden')
 	})
+	showAllWorkers() 
+
 }
 
 // 3 фильтр - только в работе, показывать статусы "В работе" и "Переделка" - старый вариант
@@ -118,7 +119,7 @@ function getData() {
 				}
 			}
 		})
-		let result = tasks.map(el => el.split('.')[positionName])
+		let result = tasks.map(el => el.split('.')[2])
 		let uniqueArray = result.filter(function(item, pos) {
 			return result.indexOf(item) == pos
 		})
@@ -149,13 +150,50 @@ function getData() {
 
 		arr.push(obj)
 	}
+
+
+
+	function setStages(arr) {
+
+
+	}
+	setStages(arr)
+
 }
 
+function getFullData() {
+	let allTasks = getAllTasks()
+
+	let allRowArr = [...allRow]
+	let arrData = []
+	for (let i = 0; i < allTasks.length; i++) {
+		let result = getRowsListByTask(allTasks[i])
+		let obj = {
+			id: i+1,
+			name: allTasks[i],
+			rows: result
+		}
+
+		arrData.push(obj)
+	}
+	console.log('arrData', arrData)
+
+	arrData.forEach(el => {
+		el.rows.forEach(row => {
+			if (row.querySelector('.table-body__step') !== null) { 
+				let fullName = row.querySelector('.table-body__step').innerHTML
+				// получение этапа, операции, перехода
+				let stage = ''
+			} 
+		})
+	})
+}
 
 function init() {
+	getFullData()
 	// executeFilter()
-	getData()
-	onlyWorkFilter()
+	// getData()
+	// onlyWorkFilter()
 }
 
 
@@ -205,6 +243,14 @@ function hideEmptyWorkers() {
 	})
 }
 hideEmptyWorkers()
+
+function showAllWorkers() {
+	let workers = [...allWorkers]
+	
+	workers.forEach(el => {
+		el.classList.remove('hidden')
+	})
+}
 
 // открытие меню фильтра
 btnFilter.addEventListener('click', () => {

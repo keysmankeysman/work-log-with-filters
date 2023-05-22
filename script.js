@@ -177,8 +177,11 @@ function getFullData() {
 		arrData.push(obj)
 	}
 	console.log('arrData', arrData)
-
+	let result = []
 	arrData.forEach(el => {
+		let obj = {
+			name: el.name
+		}
 		el.rows.forEach(row => {
 			if (row.querySelector('.table-body__step') !== null) { 
 				let fullName = row.querySelector('.table-body__step').innerHTML
@@ -187,11 +190,13 @@ function getFullData() {
 				let stage = fullName.split('.')[0].slice(6)
 				let operation = fullName.split('.')[1].slice(9)
 				let transition = fullName.split('.')[3].slice(9)
-				
+				console.log('этап', stage)
 				
 			} 
 		})
+		result.push(obj)
 	})
+	console.log(result)
 }
 
 function init() {

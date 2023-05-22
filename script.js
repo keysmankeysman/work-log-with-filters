@@ -44,17 +44,17 @@ function executeFilter() {
 		innerBody.forEach((body, index) => {
 			let lastIndexRow = index + 1 === innerBody.length
 			if (lastIndexRow) {
-				let currentStatus = body.querySelector('.table-body__status').innerHTML
+				let currentStatus = body.querySelector('.table-body__status').textContent
 				if (statuses1.includes(currentStatus)) {
 					innerBody.forEach((body) => {
-						let twoStatus = body.querySelector('.table-body__status').innerHTML
+						let twoStatus = body.querySelector('.table-body__status').textContent
 						if (!statuses1.includes(twoStatus)) {
 							body.classList.add('hidden')
 						}
 					})
 				} else if (statuses2.includes(currentStatus)) {
 					innerBody.forEach((body) => {
-						let twoStatus = body.querySelector('.table-body__status').innerHTML
+						let twoStatus = body.querySelector('.table-body__status').textContent
 						if (statuses1.includes(twoStatus)) {
 							body.classList.add('hidden')
 						}
@@ -82,8 +82,8 @@ function onlyWorkFilter() {
 	function getStatuses() {
 		arr.forEach((el,index) => {
 			el.rows.forEach((row, indx) => {
-				let currentStatus = row.querySelector('.table-body__status').innerHTML 
-				let currentEnd = row.querySelector('.table-body__end').innerHTML 
+				let currentStatus = row.querySelector('.table-body__status').textContent 
+				let currentEnd = row.querySelector('.table-body__end').textContent 
 				if (currentStatus === 'В работе' && currentEnd === '' || currentStatus === 'Переделка'  && currentEnd === '') {
 					arr[index].statusInwork = true
 					arr[index].statusInworkIndex = indx
@@ -113,7 +113,7 @@ function getData() {
 
 		allRow.forEach(row => {
 			if (row.querySelector('.table-body__step') !== null) {
-				let currentTask = row.querySelector('.table-body__step').innerHTML
+				let currentTask = row.querySelector('.table-body__step').textContent
 				if (!tasks.includes(currentTask)) {
 					tasks.push(currentTask)
 				}
@@ -132,7 +132,7 @@ function getData() {
 		let arr = [...allRow]
 		let result = arr.filter(el => {
 			if (el.querySelector('.table-body__step') !== null) { 
-				return el.querySelector('.table-body__step').innerHTML.includes(oneTask)
+				return el.querySelector('.table-body__step').textContent.includes(oneTask)
 			} 
 		})
 		return result
@@ -160,11 +160,9 @@ function getData() {
 	setStages(arr)
 
 }
-
+// старт
 function getFullData() {
 	let allTasks = getAllTasks()
-
-	let allRowArr = [...allRow]
 	let arrData = []
 	for (let i = 0; i < allTasks.length; i++) {
 		let result = getRowsListByTask(allTasks[i])
@@ -178,25 +176,31 @@ function getFullData() {
 	}
 	console.log('arrData', arrData)
 	let result = []
+	let id = 1
 	arrData.forEach(el => {
-		let obj = {
-			name: el.name
-		}
 		el.rows.forEach(row => {
+			let obj = {
+				id: id,
+				name: el.name,
+			}
 			if (row.querySelector('.table-body__step') !== null) { 
-				let fullName = row.querySelector('.table-body__step').innerHTML
+				let fullName = row.querySelector('.table-body__step').textContent
 				// получение этапа, операции, перехода
 				// console.log(fullName.split('.')[0])
 				let stage = fullName.split('.')[0].slice(6)
 				let operation = fullName.split('.')[1].slice(9)
 				let transition = fullName.split('.')[3].slice(9)
-				console.log('этап', stage)
-				
+				obj.stage = stage
+				obj.operation = operation
+				obj.transition = transition
+				obj.row = row
 			} 
+			id++
+			result.push(obj)
 		})
-		result.push(obj)
+
 	})
-	console.log(result)
+	console.log('result',result)
 }
 
 function init() {

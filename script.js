@@ -183,7 +183,12 @@ function getFullData() {
 			if (row.querySelector('.table-body__step') !== null) { 
 				let fullName = row.querySelector('.table-body__step').innerHTML
 				// получение этапа, операции, перехода
-				let stage = ''
+				// console.log(fullName.split('.')[0])
+				let stage = fullName.split('.')[0].slice(6)
+				let operation = fullName.split('.')[1].slice(9)
+				let transition = fullName.split('.')[3].slice(9)
+				
+				
 			} 
 		})
 	})
